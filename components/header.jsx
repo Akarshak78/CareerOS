@@ -29,7 +29,7 @@ export default async function Header() {
        <Link href="/" className="flex items-center">
   {/* Light Theme Logo */}
   <Image
-    src="/logo-light.png"
+    src="/logo-light.svg"
     alt="CareerOS Logo"
     width={200}
     height={60}
@@ -39,7 +39,7 @@ export default async function Header() {
 
   {/* Dark Theme Logo */}
   <Image
-    src="/logo-dark.png"
+    src="/logo-dark.svg"
     alt="CareerOS Logo"
     width={200}
     height={60}
