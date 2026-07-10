@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 import {
   PenBox,
   LayoutDashboard,
@@ -25,19 +26,33 @@ export default async function Header() {
   return (
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/">
-         <Image
-  src={"/logo.png"}
-  alt="Sensai Logo"
-  width={200}
-  height={60}
-  className="h-16 sm:h-20 w-auto object-contain"
-/>
-        </Link>
+       <Link href="/" className="flex items-center">
+  {/* Light Theme Logo */}
+  <Image
+    src="/logo-light.png"
+    alt="CareerOS Logo"
+    width={200}
+    height={60}
+    priority
+    className="block h-16 sm:h-20 w-auto object-contain dark:hidden"
+  />
+
+  {/* Dark Theme Logo */}
+  <Image
+    src="/logo-dark.png"
+    alt="CareerOS Logo"
+    width={200}
+    height={60}
+    priority
+    className="hidden h-16 sm:h-20 w-auto object-contain dark:block"
+  />
+</Link>
 
         {/* Action Buttons */}
         <div className="flex items-center space-x-2 md:space-x-4">
+           <ModeToggle />
           <SignedIn>
+            
   <Link href="/onboarding">
     <Button variant="outline" size="sm" className="hidden md:inline-flex">
       Edit Profile

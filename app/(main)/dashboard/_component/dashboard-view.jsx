@@ -37,7 +37,7 @@ const DashboardView = ({ insights }) => {
     median: range.median / 1000,
   }));
 
-  const getDemandLevelWidth = (level) => {
+ const getDemandLevelWidth = (level) => {
     switch (level.toLowerCase()) {
       case "high":
         return 100;
@@ -50,45 +50,44 @@ const DashboardView = ({ insights }) => {
     }
   };
 
-  const getDemandLevelGlow = (level) => {
+  const getDemandLevelStyles = (level) => {
     switch (level.toLowerCase()) {
       case "high":
-        return "border-green-500/40 shadow-[0_0_20px_rgba(34,197,94,0.35)] hover:shadow-[0_0_35px_rgba(34,197,94,0.6)] hover:border-green-400/60";
+        return "bg-green-500 dark:bg-black/40 border-green-500 dark:border-green-500/40 shadow-[0_0_20px_rgba(34,197,94,0.35)] hover:shadow-[0_0_35px_rgba(34,197,94,0.6)] hover:border-green-400 dark:hover:border-green-400/60";
       case "medium":
-        return "border-yellow-500/40 shadow-[0_0_20px_rgba(234,179,8,0.35)] hover:shadow-[0_0_35px_rgba(234,179,8,0.6)] hover:border-yellow-400/60";
+        return "bg-yellow-500 dark:bg-black/40 border-yellow-500 dark:border-yellow-500/40 shadow-[0_0_20px_rgba(234,179,8,0.35)] hover:shadow-[0_0_35px_rgba(234,179,8,0.6)] hover:border-yellow-400 dark:hover:border-yellow-400/60";
       case "low":
-        return "border-red-500/40 shadow-[0_0_20px_rgba(239,68,68,0.35)] hover:shadow-[0_0_35px_rgba(239,68,68,0.6)] hover:border-red-400/60";
+        return "bg-red-500 dark:bg-black/40 border-red-500 dark:border-red-500/40 shadow-[0_0_20px_rgba(239,68,68,0.35)] hover:shadow-[0_0_35px_rgba(239,68,68,0.6)] hover:border-red-400 dark:hover:border-red-400/60";
       default:
-        return "border-gray-500/40 shadow-[0_0_20px_rgba(107,114,128,0.35)] hover:shadow-[0_0_35px_rgba(107,114,128,0.6)] hover:border-gray-400/60";
+        return "bg-gray-500 dark:bg-black/40 border-gray-500 dark:border-gray-500/40 shadow-[0_0_20px_rgba(107,114,128,0.35)] hover:shadow-[0_0_35px_rgba(107,114,128,0.6)] hover:border-gray-400 dark:hover:border-gray-400/60";
     }
   };
 
   const getDemandLevelColor = (level) => {
     switch (level.toLowerCase()) {
       case "high":
-        return "bg-green-500";
+        return "bg-white dark:bg-green-500";
       case "medium":
-        return "bg-yellow-500";
+        return "bg-white dark:bg-yellow-500";
       case "low":
-        return "bg-red-500";
+        return "bg-white dark:bg-red-500";
       default:
-        return "bg-gray-500";
+        return "bg-white dark:bg-gray-500";
     }
   };
 
   const getMarketOutlookInfo = (outlook) => {
     switch (outlook.toLowerCase()) {
       case "positive":
-        return { icon: TrendingUp, color: "text-green-500" };
+        return { icon: TrendingUp, color: "text-green-900 dark:text-green-500" };
       case "neutral":
-        return { icon: LineChart, color: "text-yellow-500" };
+        return { icon: LineChart, color: "text-yellow-900 dark:text-yellow-500" };
       case "negative":
-        return { icon: TrendingDown, color: "text-red-500" };
+        return { icon: TrendingDown, color: "text-red-900 dark:text-red-500" };
       default:
-        return { icon: LineChart, color: "text-gray-500" };
+        return { icon: LineChart, color: "text-gray-900 dark:text-gray-500" };
     }
   };
-
   const OutlookIcon = getMarketOutlookInfo(insights.marketOutlook).icon;
   const outlookColor = getMarketOutlookInfo(insights.marketOutlook).color;
 
@@ -107,7 +106,7 @@ const DashboardView = ({ insights }) => {
 
       {/* Market Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="bg-black/40 border-blue-500/40 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_35px_rgba(59,130,246,0.6)] hover:border-blue-400/60 backdrop-blur transition-shadow duration-300 cursor-pointer">
+        <Card className="bg-blue-500 dark:bg-black/40 border-blue-500 dark:border-blue-500/40 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_35px_rgba(59,130,246,0.6)] hover:border-blue-400 dark:hover:border-blue-400/60 backdrop-blur transition-shadow duration-300 cursor-pointer">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Market Outlook
@@ -116,18 +115,18 @@ const DashboardView = ({ insights }) => {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{insights.marketOutlook}</div>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-neutral-900/70 dark:text-muted-foreground">
               Next update {nextUpdateDistance}
             </p>
           </CardContent>
         </Card>
 
-        <Card className="bg-black/40 border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_35px_rgba(168,85,247,0.6)] hover:border-purple-400/60 backdrop-blur transition-shadow duration-300 cursor-pointer">
+        <Card className="bg-purple-500 dark:bg-black/40 border-purple-500 dark:border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_35px_rgba(168,85,247,0.6)] hover:border-purple-400 dark:hover:border-purple-400/60 backdrop-blur transition-shadow duration-300 cursor-pointer">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Industry Growth
             </CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <TrendingUp className="h-4 w-4 text-neutral-900/70 dark:text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -135,23 +134,23 @@ const DashboardView = ({ insights }) => {
             </div>
             <Progress
               value={insights.growthRate}
-              className="mt-2 shadow-[0_0_8px_rgba(168,85,247,0.6)]"
+              className="mt-2 bg-white/30 dark:bg-secondary shadow-[0_0_8px_rgba(168,85,247,0.6)]"
             />
           </CardContent>
         </Card>
 
         <Card
-          className={`bg-black/40 backdrop-blur transition-shadow duration-300 cursor-pointer ${getDemandLevelGlow(
+          className={`backdrop-blur transition-shadow duration-300 cursor-pointer ${getDemandLevelStyles(
             insights.demandLevel
           )}`}
         >
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Demand Level</CardTitle>
-            <BriefcaseIcon className="h-4 w-4 text-muted-foreground" />
+            <BriefcaseIcon className="h-4 w-4 text-neutral-900/70 dark:text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{insights.demandLevel}</div>
-            <div className="h-2 w-full rounded-full mt-2 bg-muted overflow-hidden">
+            <div className="h-2 w-full rounded-full mt-2 bg-white/30 dark:bg-muted overflow-hidden">
               <div
                 className={`h-full rounded-full ${getDemandLevelColor(
                   insights.demandLevel
@@ -162,10 +161,10 @@ const DashboardView = ({ insights }) => {
           </CardContent>
         </Card>
 
-        <Card className="bg-black/40 border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:shadow-[0_0_35px_rgba(34,211,238,0.6)] hover:border-cyan-400/60 backdrop-blur transition-shadow duration-300 cursor-pointer">
+        <Card className="bg-cyan-500 dark:bg-black/40 border-cyan-500 dark:border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:shadow-[0_0_35px_rgba(34,211,238,0.6)] hover:border-cyan-400 dark:hover:border-cyan-400/60 backdrop-blur transition-shadow duration-300 cursor-pointer">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Top Skills</CardTitle>
-            <Brain className="h-4 w-4 text-muted-foreground" />
+            <Brain className="h-4 w-4 text-neutral-900/70 dark:text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-1">
@@ -173,7 +172,7 @@ const DashboardView = ({ insights }) => {
                 <Badge
                   key={skill}
                   variant="secondary"
-                  className="border border-cyan-500/30"
+                  className="bg-white text-neutral-900 border border-cyan-600/30 dark:bg-secondary dark:text-secondary-foreground dark:border-cyan-500/30"
                 >
                   {skill}
                 </Badge>

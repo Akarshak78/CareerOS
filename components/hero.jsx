@@ -33,7 +33,34 @@ const HeroSection = () => {
           <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl gradient-title animate-gradient">
             Your AI Career Coach for
             <br />
-            Professional Success
+            Professional{" "}
+            <span
+              className="relative inline-block font-semibold"
+              style={{
+                fontFamily: "'Caveat', cursive",
+                color: "#a3e635",
+                fontSize: "1.35em",
+                transform: "rotate(-6deg)",
+                marginLeft: "0.2em",
+                lineHeight: 1,
+              }}
+            >
+              Success
+              <svg
+                className="absolute left-0 w-full"
+                style={{ bottom: "-0.12em", height: "0.18em" }}
+                viewBox="0 0 200 20"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 12 C 40 18, 80 4, 120 10 S 180 16, 198 8"
+                  stroke="#a3e635"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
           </h1>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
             Advance your career with personalized guidance, interview prep, and
