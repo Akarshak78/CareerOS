@@ -8,14 +8,36 @@ CareerOS is a full-stack, AI-powered career coaching platform. It reviews your r
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+
+
+
+
+
+
+
+
 ---
 
-## Features
+## 🚀 Features
 
-- **AI resume review** — Upload or build your resume and get instant, actionable feedback with a resume score.
-- **AI cover letter generator** — Generate tailored cover letters for specific job applications.
-- **Interview prep** — Practice with AI-generated mock interview questions relevant to your role and industry.
-- **Industry insights dashboard** — Live market outlook, industry growth rate, demand level, top in-demand skills, and salary ranges by role, refreshed weekly via a scheduled background job.
+- 🤖 **AI Resume Review** – Analyze resumes with AI and receive a detailed resume score, strengths, weaknesses, and personalized improvement suggestions.
+
+  <img width="1912" height="732" alt="AI Resume Review" src="https://github.com/user-attachments/assets/483cf3d8-fbc3-4d34-9ba8-e1c5862362e4" />
+
+- 📝 **AI Cover Letter Generator** – Generate customized, ATS-friendly cover letters tailored to specific job descriptions in seconds.
+
+  <img width="1916" height="737" alt="AI Cover Letter Generator" src="https://github.com/user-attachments/assets/6c48d742-e81c-4640-9f83-3f2a282275fd" />
+
+
+- 📊 **Industry Insights Dashboard** – Explore real-time market outlook, industry growth, demand levels, salary trends, top in-demand skills, and weekly updated career insights.
+
+  <img width="1895" height="501" alt="Industry Insights Dashboard" src="https://github.com/user-attachments/assets/c45ebef2-a53d-4634-97b9-d64e3e92e09f" />
+
+- 📈 **Career Growth Tools** – Access an integrated suite of AI-powered tools including:
+  - Resume Builder
+  - AI Cover Letter Generator
+  - Interview Preparation
+  - Industry Insights
 - **Personalized onboarding** — Set your industry, specialization, experience, skills, and bio to personalize every feature; editable anytime from your profile.
 - **Secure authentication** — Full sign-up / sign-in flow with protected routes.
 
